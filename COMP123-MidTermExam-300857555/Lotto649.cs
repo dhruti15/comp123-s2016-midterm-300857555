@@ -3,6 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/*
+ * FileName: lotto649.cs
+ *
+ * @author Dhruti patel
+ * @date June 24, 2016
+ *
+ * StudentID: 300857555
+ *last modified :June 24, 2016
+ *
+ */
+
 
 namespace COMP123_MidTermExam_300857555
 {  /**

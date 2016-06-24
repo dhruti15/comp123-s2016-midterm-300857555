@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+/*
+ * FileName: lottomax.cs
+ *
+ * @author Dhruti patel
+ * @date June 24, 2016
+ *
+ * StudentID: 300857555
+ *last modified :June 24, 2016
+ *
+ */
 namespace COMP123_MidTermExam_300857555
 {/**
     * <summary>
