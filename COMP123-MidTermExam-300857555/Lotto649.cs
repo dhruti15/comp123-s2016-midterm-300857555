@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 
 namespace COMP123_MidTermExam_300857555
-{  /**
+{ /**
      * <summary>
      * This class is a subclass of the LottoGame abstract superclass
      * </summary>

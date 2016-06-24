@@ -20,10 +20,14 @@ namespace COMP123_MidTermExam_300857555
      * <summary>
      * This abstract class is a blueprint for all Lotto Games
      * </summary>
-     * 
+     *
      * @class LottoGame
-     * @property {int} ElementNum;
-     * @property {int} SetSize;
+     * @property
+    {int}
+    ElementNum;
+     * @property
+    {int}
+    SetSize;
      */
     public abstract class LottoGame
     {
@@ -119,16 +123,22 @@ namespace COMP123_MidTermExam_300857555
 
         private void _initialize()
         {
-            ElementList;
-            NumberList;
+
+            ElementList = new List<int>() { };
+            NumberList = new List<int>() { };
             _random = new Random();
         }
 
         private void _build()
         {
-            for (int i = 1; i <= ElementNumber; i++)
+            for (int i = 1; i <= ElementNumber;)
             {
-                NumberList.Add(_random.Next(48) + 1);
+                int rand = _random.Next(48) + 1;
+                if (!NumberList.Contains(rand))
+                {
+                    i++;
+                    NumberList.Add(rand);
+                }
             }
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -172,14 +182,16 @@ namespace COMP123_MidTermExam_300857555
                 NumberList.Clear();
                 _build();
             }
-            for (int i = 1; i <= ElementNumber; i++)
+            foreach (int x in NumberList)
             {
-                ElementList.Add(NumberList.Remove(NumberList.Select(i)));
-                ElementList.Sort();
+                ElementList.Add(x);
+                NumberList.Remove(x);
             }
+            ElementList.Sort();
         }
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the public PickElements method here ----------------------------
     }
 }
+
