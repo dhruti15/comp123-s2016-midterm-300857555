@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP123_MidTermExam_300857555
 {
+
     /**
      * <summary>
      * This abstract class is a blueprint for all Lotto Games
@@ -17,6 +18,60 @@ namespace COMP123_MidTermExam_300857555
      */
     public abstract class LottoGame
     {
+        private List<int> _elementList;
+        private List<int> _numberList;
+        private int _elementNumber;
+        private int _setSize;
+
+        Random _random;
+
+        public List<int> ElementList
+        {
+            get
+            {
+                return _elementList;
+            }
+        }
+
+        public List<int> NumberList
+        {
+            get
+            {
+                return _numberList;
+            }
+        }
+
+        public Random random
+        {
+            get
+            {
+                return _random;
+            }
+        }
+
+        public int SetSize
+        {
+            get
+            {
+                return _setSize;
+            }
+            set
+            {
+                _setSize = value;
+            }
+        }
+
+        public int ElementNumber
+        {
+            get
+            {
+                return _elementNumber;
+            }
+            set
+            {
+                _elementNumber = value;
+            }
+        }
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE private fields here --------------------------------------------
@@ -53,6 +108,20 @@ namespace COMP123_MidTermExam_300857555
             this._build();
         }
 
+        private void _initialize()
+        {
+            ElementList;
+            NumberList;
+            _random = new Random();
+        }
+
+        private void _build()
+        {
+            for (int i = 1; i <= ElementNumber; i++)
+            {
+                NumberList.Add(_random.Next(48) + 1);
+            }
+        }
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the private _initialize method here -----------------------------
@@ -86,6 +155,20 @@ namespace COMP123_MidTermExam_300857555
             return lottoNumberString;
         }
 
+        public void PickElements()
+        {
+            if (ElementList.Count > 0)
+            {
+                ElementList.Clear();
+                NumberList.Clear();
+                _build();
+            }
+            for (int i = 1; i <= ElementNumber; i++)
+            {
+                ElementList.Add(NumberList.Remove(NumberList.Select(i)));
+                ElementList.Sort();
+            }
+        }
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the public PickElements method here ----------------------------

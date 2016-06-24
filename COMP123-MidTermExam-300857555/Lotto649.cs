@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace COMP123_MidTermExam_300857555
-{
-    /**
+{  /**
      * <summary>
      * This class is a subclass of the LottoGame abstract superclass
      * </summary>
@@ -28,6 +27,17 @@ namespace COMP123_MidTermExam_300857555
         public Lotto649()
             : base(6, 49)
         {
+
+        }
+
+        public void GenerateLottoNumbers()
+        {
+            LottoGame lg = new Lotto649();
+            for (int i = 1; i <= 6; i++)
+            {
+                lg.PickElements();
+                lg.ToString();
+            }
 
         }
 
